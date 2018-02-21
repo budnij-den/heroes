@@ -23,10 +23,14 @@
 
 <div class="container">
   <h2>constant heroes</h2>
-  <span *ngIf="selectedHero" class="btn-lg btn-warning">{{selectedHero.bio}}</span>
+  <span *ngIf="selectedHero" class="btn-lg btn-warning"  (click)="resetHero();">{{selectedHero.bio}}</span>
   <span *ngIf="!selectedHero" class="btn-lg btn-warning">select hero!</span>
   <ul class="heroes">
-    <li *ngFor="let h of heroes" (click)="onSelect(h)">
+    <li
+      *ngFor="let h of heroes"
+      (click)="onSelect(h)"
+      [class.selected]="h===selectedHero"
+    >
       <span class="badge">{{h.id}}.</span>
       {{h.name}}
     </li>

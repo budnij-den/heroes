@@ -31,7 +31,7 @@
       (click)="onSelect(h)"
       [class.selected]="h===selectedHero"
     >
-      <span class="badge">{{h.id}}.</span>
+      <span class="badge">{{h.id | number : '2.0'}}.</span>
       {{h.name}}
     </li>
   </ul>
